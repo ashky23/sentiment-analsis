@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Sentiment Analysis App</title>
+</head>
+<body>
+    <center>
+    <h1 style="color: antiquewhite; margin-top: 10rem;">Let's see what's your message sounds like?</h1>
+</center>
+    <center>
+    <form class = "form-group" action="/analysis" method="post" >
+        <input type="text" class="form-control" name="text" id="text" style="width: 60rem;" placeholder = "Enter your message here" required><br><br>
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</center>
+    <center>
+        <div id="result">
+            {% if data %}
+            <h2 style="color: aqua;"> Your message sounds {{data}}.</h2>
+            {% endif %}
+        </div>
+    </center>
+</body>
+</html>
